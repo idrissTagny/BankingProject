@@ -19,7 +19,8 @@
             "mainClass": "com.bankingsystem.bank_registry_service.BankRegistryServiceApplication",
             "projectName": "bank-registry-service",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=36433 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=bank-registry-service"
         },
         {
             "type": "java",
@@ -39,6 +40,16 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.banksystem.bank_registry_user.BankRegistryUserApplication",
             "projectName": "bank-registry-user",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BankProxyServiceApplication<bank-proxy-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.bankingsystem.bank_proxy_service.BankProxyServiceApplication",
+            "projectName": "bank-proxy-service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
