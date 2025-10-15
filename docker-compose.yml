@@ -35,7 +35,7 @@ services:
     networks:
       - bankingnetwork
   
-  bank-user-service:
+  bank-user-services:
     build: ./bank-user-service
     ports:
       - "8081:8081"
