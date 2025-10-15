@@ -21,8 +21,7 @@ services:
       - SPRING_CLOUD_CONFIG_URI = http://bankingservice:8080
       - SPRING_CONFIG_IMPORT = configserver:http://bankingservice:8080
     depends_on:
-      - servicename: bankingservice
-        condition: service_healthy  
+      -  bankingservice
 
     networks:
       - bankingnetwork
@@ -46,12 +45,9 @@ services:
       - SPRING_CLOUD_CONFIG_URI = http://bankingservice:8080
       - SPRING_CONFIG_IMPORT = configserver:http://bankingservice:8080
     
-    depends_on:
-      - servicename: bank
-        condition: service_healthy
-      
-      - servicename: mysqlbank-user-db
-        condition: service_healthy
+    depends_on: 
+    - bankingservice
+    - mysqlbank-user-db
 
     networks:
       - bankingnetwork
@@ -65,8 +61,7 @@ services:
       - SPRING_CLOUD_CONFIG_URI = http://bankingservice:8080
       - SPRING_CONFIG_IMPORT = configserver:http://bankingservice:8080
     depends_on:
-      - servicename: bankingservice
-        condition: service_healthy
+      - bankingservice
     networks:
       - bankingnetwork
 networks:
