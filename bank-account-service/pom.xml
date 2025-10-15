@@ -8,10 +8,10 @@
 		<version>3.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.bankingsysteme</groupId>
-	<artifactId>bank-user-services</artifactId>
+	<groupId>com.banksystem</groupId>
+	<artifactId>bank-account-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bank-user-services</name>
+	<name>bank-account-service</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -39,7 +39,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
