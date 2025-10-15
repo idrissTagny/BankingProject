@@ -52,6 +52,16 @@
             "projectName": "bank-proxy-service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BankAccountServiceApplication<bank-account-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.banksystem.bank_account_service.BankAccountServiceApplication",
+            "projectName": "bank-account-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
