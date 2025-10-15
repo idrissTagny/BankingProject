@@ -1,0 +1,4 @@
+FROM openjdk:17
+VOLUME /tmp
+ADD target/bank-user-services.jar bank-user-services.jar
+ENTRYPOINT ["java","-jar","/bank-user-services.jar"]

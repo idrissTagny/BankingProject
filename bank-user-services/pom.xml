@@ -127,6 +127,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>bank-user-services</finalName>
 	</build>
 
 </project>
