@@ -1,4 +1,4 @@
 FROM openjdk:17
 VOLUME /tmp
-ADD target/bankingservice.jar bank-proxy-service.jar
+ADD target/bankingservice.jar bank-account-service.jar
 ENTRYPOINT ["java","-jar","/bank-account-service.jar"]
