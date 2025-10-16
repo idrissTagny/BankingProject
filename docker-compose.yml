@@ -6,9 +6,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_APPLICATION_NAME: bankingservice
-      SERVER_PORT: 8080
-      SPRING_CLOUD_CONFIG_SERVER_GIT_URI: https://github.com/bankingProject-21T2342/Cloud-conf.git
+      - SPRING_APPLICATION_NAME=bankingservice
+      - SERVER_PORT=8080
+      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/bankingProject-21T2342/Cloud-conf.git
     networks:
       - bankingnetwork
 
@@ -17,9 +17,9 @@ services:
     ports:
       - "8761:8761"
     environment:
-      SPRING_APPLICATION_NAME: bank-registry-service
-      SPRING_CLOUD_CONFIG_URI: http://bankingservice:8080
-      SPRING_CONFIG_IMPORT: configserver:http://bankingservice:8080
+      - SPRING_APPLICATION_NAME=bank-registry-service
+      - SPRING_CLOUD_CONFIG_URI=http://bankingservice:8080
+      - SPRING_CONFIG_IMPORT=configserver:http://bankingservice:8080
     depends_on:
       - bankingservice
     networks:
@@ -31,18 +31,18 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: bank_user_db
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - bankingnetwork
   
   bank-user-services:
     build: ./bank-user-services
     ports:
-      - "8081:8081"
+      - "8081"
     environment:
-      SPRING_APPLICATION_NAME: bank-user-service
-      SPRING_CLOUD_CONFIG_URI: http://bankingservice:8080
-      SPRING_CONFIG_IMPORT: configserver:http://bankingservice:8080
+      - SPRING_APPLICATION_NAME=bank-user-service
+      - SPRING_CLOUD_CONFIG_URI=http://bankingservice:8080
+      - SPRING_CONFIG_IMPORT=configserver:http://bankingservice:8080
     depends_on: 
       - bankingservice
       - mysqlbank-user-db
@@ -52,11 +52,11 @@ services:
   bank-proxy-service:
     build: ./bank-proxy-service
     ports:
-      - "8082:8082"
+      - "8179:8179"
     environment:
-      SPRING_APPLICATION_NAME: bank-proxy-service
-      SPRING_CLOUD_CONFIG_URI: http://bankingservice:8080
-      SPRING_CONFIG_IMPORT: configserver:http://bankingservice:8080
+      - SPRING_APPLICATION_NAME=bank-proxy-service
+      - SPRING_CLOUD_CONFIG_URI=http://bankingservice:8080
+      - SPRING_CONFIG_IMPORT=configserver:http://bankingservice:8080
     depends_on:
       - bankingservice
     networks:
